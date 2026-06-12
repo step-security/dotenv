@@ -1,0 +1,25 @@
+name: "StepSecurity Dotenv Loader"
+description: "Read a .env file and export every key into GITHUB_ENV so subsequent steps can use the variables."
+author: "step-security"
+
+inputs:
+  path:
+    description: "Directory containing the .env file."
+    required: false
+    default: "./"
+  mode:
+    description: "If set, load .env.<mode> instead of plain .env (e.g. development, production)."
+    required: false
+    default: ""
+  load-mode:
+    description: "'strict' to fail when the .env file is missing; 'skip' to continue silently."
+    required: false
+    default: "strict"
+
+runs:
+  using: "node24"
+  main: "dist/index.js"
+
+branding:
+  icon: "settings"
+  color: "blue"

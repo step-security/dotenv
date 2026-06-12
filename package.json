@@ -1,0 +1,30 @@
+{
+  "name": "dotenv",
+  "version": "2.4.0",
+  "private": true,
+  "description": "GitHub Action that reads a .env file and exports the variables into GITHUB_ENV.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts --out dist --minify",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "author": "step-security",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "axios": "1.16.0",
+    "dotenv": "^17.0.0",
+    "dotenv-expand": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@vercel/ncc": "^0.38.4",
+    "prettier": "^3.3.3",
+    "typescript": "^5.9.0"
+  },
+  "prettier": {
+    "useTabs": true,
+    "trailingComma": "all",
+    "singleQuote": false
+  }
+}
